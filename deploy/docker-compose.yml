@@ -1,0 +1,24 @@
+services:
+  detector:
+    build: .
+    image: person-detector:latest
+    restart: unless-stopped
+    user: "1000:1000"            # first Ubuntu account, so events/ stays yours; check with `id -u`
+    environment:
+      RUNTIME: ""                # required: openvino or onnx
+      SOURCE: rtsp://user:password@192.168.1.50:554/stream
+      CONF: "0.5"
+      MIN_HEIGHT: "0.05"         # smallest box kept, as a fraction of the frame height
+      FPS: "5"
+      COOLDOWN: "10"
+      TZ: Europe/Madrid
+    volumes:
+      - ./models:/models:ro      # best_openvino_model/ or best.onnx, matching RUNTIME
+      - ./events:/events         # snapshots of frames with people
+    # devices:
+    #   - /dev/video0:/dev/video0  # USB camera (SOURCE: "0")
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

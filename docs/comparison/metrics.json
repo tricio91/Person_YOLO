@@ -1,0 +1,14 @@
+{
+  "fine-tuned": {
+    "mAP50": 0.7706,
+    "mAP50-95": 0.4942,
+    "precision": 0.8236,
+    "recall": 0.6721
+  },
+  "coco_yolov8n": {
+    "mAP50": 0.5992,
+    "mAP50-95": 0.3545,
+    "precision": 0.7246,
+    "recall": 0.5112
+  }
+}

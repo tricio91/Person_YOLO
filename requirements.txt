@@ -1,0 +1,10 @@
+ultralytics>=8.2.0
+torch>=2.0.0
+numpy>=1.23
+opencv-python>=4.5
+pillow>=9.0
+onnx>=1.15
+onnxruntime>=1.17
+onnxslim>=0.1.31
+openvino>=2024.0
+nncf>=2.8
