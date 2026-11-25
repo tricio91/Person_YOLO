@@ -825,4 +825,4 @@ to the weights and to anything made from them (ONNX and OpenVINO exports include
 - The repository keeps two sets of weights: the final model,
   `runs/person/twoclass_stage2_camera/weights/last.pt`, and its INT8 export already in
   `deploy/models/best_openvino_model/`. Everything else under `runs/` is git-ignored and
-  stays local. The dataset lives outside the repo entirely, under `~/datasets/`.
+  stays local.
